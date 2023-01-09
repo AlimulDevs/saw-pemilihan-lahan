@@ -7,10 +7,10 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
-class Controller extends BaseController
+class HitungController extends BaseController
 {
-    public function homeIndex()
+    public function index()
     {
-        return view("home");
+        return view("hitung.index");
     }
 }
