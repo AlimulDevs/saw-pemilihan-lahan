@@ -1,13 +1,7 @@
 @extends('template.template')
 
 @section('content')
-@if ($message = Session::get('success'))
 
-
-
-
-
-@endif
 @if ($message = Session::get('success'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{$message}}
@@ -35,18 +29,19 @@
                 <form class="form-horizontal " action="/alternatif/edit" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{$dt->id}}" id="">
-                    <div class="form-group row mb-4 ">
-                        <label for="inputEmail3" class="ml-1 col-form-label">Lokasi</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="lokasi" class="form-control" value="{{$dt->lokasi}}" id="inputEmail3" placeholder="lokasi" required>
-                        </div>
-                    </div>
                     <div class="form-group row mb-4">
-                        <label for="inputPassword3" class="ml-1 col-form-label">Pemilik</label>
+                        <label for="inputPassword3" class="ml-1 col-form-label">Pemilik Lahan</label>
                         <div class="col-sm-10">
                             <input type="text" name="pemilik" class="form-control" value="{{$dt->pemilik}}" id="inputPassword3" placeholder="pemilik" required>
                         </div>
                     </div>
+                    <div class="form-group row mb-4 ">
+                        <label for="inputEmail3" class="ml-1 col-form-label">Lokasi Lahan</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="lokasi" class="form-control" value="{{$dt->lokasi}}" id="inputEmail3" placeholder="lokasi" required>
+                        </div>
+                    </div>
+
                     <div class="form-group  ">
                         <label for="inputPassword3" class="ml-1 col-form-label">Luas Lahan (m<sup>2</sup>)</label>
                         <div class="col-sm-10">
@@ -76,19 +71,19 @@
     <div class="card-body">
         <form class="form-horizontal " action="/alternatif/create" method="post">
             @csrf
-
-            <div class="form-group row mb-4 ">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Lokasi</label>
-                <div class="col-sm-10">
-                    <input type="text" name="lokasi" class="form-control col-6" id="inputEmail3" placeholder="lokasi tanah" required>
-                </div>
-            </div>
             <div class="form-group row mb-4">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Pemilik</label>
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Pemilik Lahan</label>
                 <div class="col-sm-10">
                     <input type="text" name="pemilik" class="form-control col-6" id="inputPassword3" placeholder="nama pemilik" required>
                 </div>
             </div>
+            <div class="form-group row mb-4 ">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Lokasi Lahan</label>
+                <div class="col-sm-10">
+                    <input type="text" name="lokasi" class="form-control col-6" id="inputEmail3" placeholder="lokasi tanah" required>
+                </div>
+            </div>
+
             <div class="form-group row ">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Luas Lahan (m<sup>2</sup>)</label>
                 <div class="col-sm-10">
@@ -96,7 +91,7 @@
                 </div>
             </div>
             <div class="form-group row float-left ml-1 mt-2 ">
-                <input type="submit" class="btn btn-primary " value="Tambah">
+                <input type="submit" class="btn btn-primary" value="Tambah">
             </div>
         </form>
         <div class="table-responsive">

@@ -23,6 +23,17 @@ Route::get('/alternatif/index', [AlternatifController::class, "index"]);
 Route::post('/alternatif/create', [AlternatifController::class, "create"]);
 Route::post('/alternatif/edit', [AlternatifController::class, "edit"]);
 Route::get('/alternatif/delete/{id}', [AlternatifController::class, "delete"]);
+
+
+
 Route::get('/hitung/index', [HitungController::class, "index"]);
+
+
+
 Route::get('/kriteria/index', [KriteriaController::class, "index"]);
+Route::post('/kriteria/create', [KriteriaController::class, "create"]);
+Route::get('/kriteria/delete', [KriteriaController::class, "delete"]);
+
 Route::get('/penilaian/index', [PenilaianController::class, "index"]);
+Route::get('/penilaian/delete/{id}', [PenilaianController::class, "delete"]);
+Route::post('/penilaian/create', [PenilaianController::class, "create"]);
